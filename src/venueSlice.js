@@ -39,13 +39,25 @@ export const venueSlice = createSlice({
     },
   
   ],
-  reducers: {
+  // The reducers are functions that control how the state changes in response to actions sent to the store.
+  // They specify how the state is transformed in response to certain actions.
+  // The reducer is a pure function that takes the previous state and an action as arguments and returns a new state.
+  // The reducer must be pure. A pure function is a function where the return value is determined only by its input values,
+  // without observable side effects.
+  // payload is the data that is being sent along with the action.
+  // In this case, the payload is the index of the item in the state array.
+  // action is an object that has a type and a payload.
+  // The type is a string that describes the action that is being performed.
+    reducers: {
    
     incrementQuantity: (state, action) => {
+      // getting the index from the payload
       const { payload: index } = action;
+      // Accessing the state array to check if the item exists and if the quantity is less than 3
       if (state[index]) {
         if (state[index].name === " Auditorium Hall (Capacity:200)" && state[index].quantity >= 3) {
           return;        }
+        // Incrementing the quantity of the item
         state[index].quantity++;
       }
     },
