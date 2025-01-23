@@ -1,6 +1,9 @@
 // venueSlice.js
 import { createSlice } from "@reduxjs/toolkit";
-
+// In the context of React and Redux, a state refers to an object that holds data or information about the component or application.
+// It determines how the component or application behaves and renders.
+// The state is mutable, meaning it can change over time
+// Here the state are initialized with the createSlice function from the Redux Toolkit.
 export const venueSlice = createSlice({
   name: "venue",
   initialState: [
